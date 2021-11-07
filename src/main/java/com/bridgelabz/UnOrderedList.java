@@ -54,7 +54,7 @@ public class UnOrderedList<T> {
     public void saveToFile() {
         String contents = new String();
         for (T item : linkedList) {
-            contents += " " + item;
+            contents += item+" ";
         }
         try {
             Files.writeString(Path.of("G:\\programming\\JAVA LFP batch\\DataStructures\\sampleText.txt"), contents, StandardCharsets.UTF_8);
