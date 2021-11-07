@@ -67,7 +67,7 @@ public class OrderedList<T> {
         for (Integer item : array) {
             linkedListUpdated.add((T) item);
         }
-        System.out.println("Linked list after resorting: " + linkedListUpdated);
+        System.out.println("New Linked list after resorting: " + linkedListUpdated);
     }
 
     public void stringToIntegerArray(String[] array) {
