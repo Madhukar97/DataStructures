@@ -29,14 +29,14 @@ public class PrimeNumbers {
                 primes.add(i);
             }
         }
-        System.out.println("primes = "+primes);
+        System.out.println("primes = " + primes);
 
         int n1 = 0, n2 = 100, i = 0, j = 0;
         for (int x : primes) {
-            if (x >= n1 && x < n2 && n2 <= 1000 ) {
+            if (x >= n1 && x < n2 && n2 <= 1000) {
                 array2D[i][j] = x;
                 j++;
-                if (isAnagramPrime(x)){
+                if (isAnagramPrime(x)) {
                     anagramSet.add(x);
                 }
             }
@@ -47,9 +47,9 @@ public class PrimeNumbers {
                 n2 += 100;
             }
         }
-        for (int r=0;r<row;r++) {
-            for (int c=0;c<col;c++){
-                if (array2D[r][c]!=0) {
+        for (int r = 0; r < row; r++) {
+            for (int c = 0; c < col; c++) {
+                if (array2D[r][c] != 0) {
                     System.out.print((array2D[r][c]) + "  ");
                 }
             }
@@ -60,30 +60,30 @@ public class PrimeNumbers {
     public boolean isAnagramPrime(int x) {
         String newNum = "";
 
-        if (x>11) {
+        if (x > 11) {
             String[] primeDigits = (Integer.toString(x).split(""));
-            System.out.println("Before shuffle = "+ x);
+            System.out.println("Before shuffle = " + x);
             Collections.shuffle(Arrays.asList(primeDigits));
-            for (int i=0;i<primeDigits.length;i++){
-                newNum+=primeDigits[i];
+            for (int i = 0; i < primeDigits.length; i++) {
+                newNum += primeDigits[i];
             }
             int shuffledNum = Integer.parseInt(newNum);
             System.out.println(shuffledNum);
-            while (shuffledNum==x){
+            while (shuffledNum == x) {
                 shuffledNum = shuffleTheNumber(x);
                 System.out.println(shuffledNum);
             }
-            if (isPrime(shuffledNum)){
+            if (isPrime(shuffledNum)) {
                 anagramSet.add(shuffledNum);
                 return true;
-            }else return false;
+            } else return false;
         }
         return false;
     }
 
-    public int shuffleTheNumber(int x){
+    public int shuffleTheNumber(int x) {
         String newNum = "";
-        if (x>11) {
+        if (x > 11) {
             String[] primeDigits = (Integer.toString(x).split(""));
             Collections.shuffle(Arrays.asList(primeDigits));
             for (int i = 0; i < primeDigits.length; i++) {
@@ -95,25 +95,25 @@ public class PrimeNumbers {
         return x;
     }
 
-    public boolean isPrime(int num){
-        int count=0;
+    public boolean isPrime(int num) {
+        int count = 0;
 
-        for(int i=2;i<num;i++){
-            if (num%i==0){
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
                 count++;
             }
         }
-        if (count==0){
+        if (count == 0) {
             return true;
-        }else
+        } else
             return false;
     }
 
-    public void hashSetTo2DArray(){
+    public void hashSetTo2DArray() {
         System.out.println("PrimeAnagrams in 2D Array = ");
         int n1 = 0, n2 = 100, i = 0, j = 0;
         for (int x : anagramSet) {
-            if (x >= n1 && x < n2 && n2 <= 1000 ) {
+            if (x >= n1 && x < n2 && n2 <= 1000) {
                 primeAnagramArray2D[i][j] = x;
                 j++;
             }
@@ -124,9 +124,9 @@ public class PrimeNumbers {
                 n2 += 100;
             }
         }
-        for (int r=0;r<row;r++) {
-            for (int c=0;c<col;c++){
-                if (primeAnagramArray2D[r][c]!=0) {
+        for (int r = 0; r < row; r++) {
+            for (int c = 0; c < col; c++) {
+                if (primeAnagramArray2D[r][c] != 0) {
                     System.out.print((primeAnagramArray2D[r][c]) + "  ");
                 }
             }
